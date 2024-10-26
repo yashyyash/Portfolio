@@ -1,0 +1,169 @@
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+  .my-name {
+      font-size: 30px; /* Smaller font size for the name on mobile */
+  }
+
+  .funny-tagline {
+      font-size: 16px; /* Smaller font size for the tagline on mobile */
+  }
+}
+/* best work hota hai raat ko */
+.about-section {
+  padding-top: 4%;
+  display: flex; /* Creates a flex container */
+  height: 400px; /* Medium height for the section */
+  background-color: white; /* Light mode background color */
+  color: black; /* Light mode text color */
+}
+
+/* Styles for the dark mode */
+body.dark-mode .about-section {
+  background-color: black; /* Dark mode background color */
+  color: white; /* Dark mode text color */
+}
+
+.left-half {
+  flex: 1; /* Takes half of the section width */
+  display: flex; /* Flexbox for centering */
+  justify-content: flex-end; /* Aligns the image to the right */
+  align-items: center; /* Center vertically */
+}
+
+.right-half {
+  flex: 1; /* Takes half of the section width */
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align items to the top */
+  align-items: flex-start; /* Align items to the left */
+  padding: 20px; /* Adds padding for spacing */
+}
+
+.greeting-container {
+  height: 70px; /* Set a fixed height for the greeting container */
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack greetings vertically */
+  justify-content: center; /* Center greetings vertically */
+  align-items: center; /* Center greetings horizontally */
+}
+
+.lorem-text {
+  margin-top: 20px; /* Adds space between greetings and the lorem text */
+}
+
+/* Image styles */
+.profile-image {
+  width: 350px; /* Width of the circular image */
+  height: 350px; /* Height of the circular image */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures image covers the area */
+}
+
+/* Typewriter effect styles */
+.greeting {
+  font-size: 62px; /* Font size for greeting */
+  margin: 0; /* Remove margin */
+}
+h3 {
+  font-size: 28px; /* Adjust this value to increase the size as needed */
+  margin-top: 20px; /* Adds space between greetings and the heading */
+}
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Auto height for smaller screens */
+  }
+
+  .left-half, .right-half {
+    width: 100%; /* Full width on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+
+  .profile-image {
+    margin-bottom: 20px; /* Space between image and text on mobile */
+  }
+
+  .greeting {
+    font-size: 24px; /* Smaller font size for mobile */
+  }
+}
+
+/* lol */
+
+/* Services Section Styling */
+#services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style for each service button */
+.service-btn {
+  width: 80px; /* Diameter of the button */
+  height: 80px;
+  border-radius: 50%; /* Makes the button circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Text color */
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+/* Colors for each button */
+.service-btn.red {
+  background-color: #FF4C4C;
+}
+.service-btn.orange {
+  background-color: #FFA500;
+}
+.service-btn.yellow {
+  background-color: #FFD700;
+}
+.service-btn.green {
+  background-color: #4CAF50;
+}
+
+/* Hover effect */
+.service-btn:hover {
+  transform: scale(1.1); /* Scale up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* hasna tha kya? */
+/* Footer Section */
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.footer-icon {
+  color: black; /* Light mode icon color */
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+body.dark-mode .footer-icon {
+  color: white; /* Dark mode icon color */
+}
+
+.footer-icon:hover {
+  color: #3498db; /* Hover color */
+}

@@ -1,0 +1,426 @@
+/* General Reset */
+* {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  box-sizing: border-box; /* Ensures padding and borders are included in element's total width and height */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Sets a default font for the webpage */
+  transition: background-color 0.0s, color 0.0s; /* Smooth transition for background color and text color changes */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: black; /* Dark background color for dark mode */
+  color: #f0f0f0; /* Light text color for dark mode */
+}
+
+/* Navbar Styles */
+.navbar {
+  position: sticky; /* Makes the navbar stick to the top when scrolling */
+  top: 0; /* Positions the navbar at the top */
+  width: 100%; /* Full width */
+  background-color: white; /* White background color for light mode */
+  color: black; /* Black text color for light mode */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between; /* Spaces items out evenly */
+  padding: 1em; /* Padding around the navbar */
+  z-index: 1000; /* Ensures the navbar is above other content */
+  box-shadow: none; /* Removes any box shadow */
+}
+
+.logo {
+  font-size: 1.5em; /* Increases the font size for the logo */
+  font-weight: bold; /* Makes the logo text bold */
+}
+
+.nav-links {
+  display: flex; /* Flexbox layout for navigation links */
+  align-items: center; /* Centers items vertically within the nav-links */
+}
+
+/* Styles for individual navigation links */
+.nav-links a {
+  color: black; /* Black text color for links in light mode */
+  padding: 0.5em; /* Padding around each link */
+  text-decoration: none; /* Removes underline from links */
+  border-radius: 10px; /* Adds rounded edges to the links */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background color and text color on hover */
+}
+
+/* Lilac hover effect for navigation links in light mode */
+.nav-links a:hover {
+  background-color: #e6e6fa; /* Lilac color on hover */
+  color: black; /* Keep text color black on hover */
+}
+
+/* Hamburger Menu Styles */
+#menu-toggle {
+  display: none; /* Hides the menu toggle checkbox */
+}
+
+.hamburger {
+  display: none; /* Hidden by default, shown only on mobile */
+  font-size: 1.5em; /* Increases font size for the hamburger icon */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Dark Mode Toggle Switch Styles */
+.switch {
+  margin-left: 1em; /* Margin to the left of the switch */
+  position: relative; /* Allows absolute positioning of child elements */
+  display: inline-block; /* Displays inline and allows width and height */
+  width: 40px; /* Width of the switch */
+  height: 20px; /* Height of the switch */
+}
+
+.switch input {
+  opacity: 0; /* Hides the checkbox visually */
+  width: 0; /* Sets width to 0 */
+  height: 0; /* Sets height to 0 */
+}
+
+/* Styles for the slider that visually represents the toggle */
+.slider {
+  position: absolute; /* Positions the slider absolutely within the switch */
+  top: 0; /* Aligns to the top */
+  left: 0; /* Aligns to the left */
+  right: 0; /* Aligns to the right */
+  bottom: 0; /* Aligns to the bottom */
+  background-color: #ccc; /* Default background color for the slider */
+  border-radius: 34px; /* Rounds the corners of the slider */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: 0.4s; /* Smooth transition for background color change */
+}
+
+/* Styles for the round knob of the toggle switch */
+.slider:before {
+  position: absolute; /* Positions the knob absolutely within the slider */
+  content: ""; /* Required for pseudo-elements */
+  height: 14px; /* Height of the knob */
+  width: 14px; /* Width of the knob */
+  left: 4px; /* Initial position from the left */
+  bottom: 3px; /* Initial position from the bottom */
+  background-color: white; /* White color for the knob */
+  border-radius: 50%; /* Makes the knob circular */
+  transition: 0.4s; /* Smooth transition for the knob movement */
+}
+
+/* Styles for when the toggle is checked (dark mode active) */
+input:checked + .slider {
+  background-color: #2196F3; /* Change slider color when checked */
+}
+
+/* Moves the knob when the toggle is checked */
+input:checked + .slider:before {
+  transform: translateX(18px); /* Moves the knob to the right */
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Shows the hamburger icon on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hides navigation links by default on mobile */
+    flex-direction: column; /* Stacks links vertically */
+    background-color: white; /* White background color for the dropdown menu in light mode */
+    position: absolute; /* Positions dropdown menu absolutely */
+    top: 100%; /* Positions the dropdown directly below the navbar */
+    right: 0; /* Aligns dropdown to the right side of the screen */
+    width: 200px; /* Set a fixed width for the dropdown */
+    /* Removed shadow effect from dropdown */
+  }
+
+  /* Shows the nav links when the menu toggle is checked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex; /* Displays the dropdown menu */
+  }
+
+  /* In mobile view, increase padding and add a border on top of links */
+  .nav-links a {
+    padding: 1em; /* Increases padding for links in mobile view */
+    border-top: 1px solid rgb(255, 255, 255); /* Adds a border between links */
+    color: black; /* Black text color for links in light mode */
+    text-align: left; /* Aligns text to the left within the links */
+    box-shadow: none; /* Remove box shadow from links */
+  }
+
+  /* Hover effect for navigation links in mobile */
+  .nav-links a:hover {
+    background-color: #e6e6fa; /* Lilac color on hover */
+    color: black; /* Keep text color black on hover */
+  }
+
+  /* Dark Mode styles for the dropdown */
+  body.dark-mode .nav-links {
+    background-color: black; /* Black background color for the dropdown menu in dark mode */
+  }
+
+  /* Dark Mode styles for links in dropdown */
+  body.dark-mode .nav-links a {
+    color: white; /* White text color for links in dark mode */
+    /*text-shadow: 1px 1px 2px rgb(0, 0, 0); Adds a subtle shadow to text for better readability
+    outline: 1px solid black; /* Adds a light outline around the text */
+  }
+
+  /* Hover effect for navigation links in dark mode */
+  body.dark-mode .nav-links a:hover {
+    background-color: #e6e6fa; /* Lilac color on hover in dark mode */
+    color: black; /* Keep text color black on hover */
+  }
+}
+
+/* Dark Mode Navbar Styles */
+body.dark-mode .navbar {
+  background-color: black; /* Dark background color for the navbar in dark mode */
+  color: white; /* White text color for the navbar in dark mode */
+}
+
+body.dark-mode .nav-links a {
+  color: white; /* White text color for links in dark mode */
+  border-top: 1px solid rgb(0, 0, 0); /* Adds a border between links */
+}
+
+/* Hover effect for navigation links in dark mode */
+body.dark-mode .nav-links a:hover {
+  background-color: #e6e6fa; /* Lilac color on hover */
+}
+
+/* sun moon */
+.switch {
+  margin-left: 1em; /* Margin to the left of the switch */
+  position: relative; /* Allows absolute positioning of child elements */
+  display: inline-block; /* Displays inline and allows width and height */
+  width: 60px; /* Width of the switch */
+  height: 30px; /* Height of the switch */
+}
+
+.switch input {
+  opacity: 0; /* Hides the checkbox visually */
+  width: 0; /* Sets width to 0 */
+  height: 0; /* Sets height to 0 */
+}
+
+/* Styles for the slider that visually represents the toggle */
+.slider {
+  position: absolute; /* Positions the slider absolutely within the switch */
+  top: 0; /* Aligns to the top */
+  left: 0; /* Aligns to the left */
+  right: 0; /* Aligns to the right */
+  bottom: 0; /* Aligns to the bottom */
+  background-color: #ccc; /* Default background color for the slider */
+  border-radius: 20px; /* Rounds the corners of the slider */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: 0.4s; /* Smooth transition for background color change */
+}
+
+/* Styles for the icons */
+.sun-icon, .moon-icon {
+  position: absolute; /* Positions icons absolutely within the slider */
+  top: 50%; /* Centers icons vertically */
+  transform: translateY(-50%); /* Aligns to the center */
+  font-size: 1.2em; /* Adjusts icon size */
+  transition: opacity 0.4s; /* Smooth transition for opacity */
+}
+
+/* Position the sun icon */
+.sun-icon {
+  left: 10px; /* Positions the sun icon to the left */
+  opacity: 1; /* Fully visible by default */
+}
+
+/* Position the moon icon */
+.moon-icon {
+  right: 10px; /* Positions the moon icon to the right */
+  opacity: 0; /* Hidden by default */
+}
+
+/* Styles for when the toggle is checked (dark mode active) */
+input:checked + .slider {
+  background-color: #2196F3; /* Change slider color when checked */
+}
+
+/* Moves the knob when the toggle is checked */
+input:checked + .slider:before {
+  transform: translateX(30px); /* Moves the knob to the right */
+}
+
+/* Show moon icon when dark mode is active */
+input:checked + .slider .moon-icon {
+  opacity: 1; /* Fully visible */
+}
+
+input:checked + .slider .sun-icon {
+  opacity: 0; /* Hidden */
+}
+/* ---------------------------idddhar taaak saab sahi iske niche changes karne hai ---------------------- */
+
+.about-me {
+  padding: 20px; /* Padding around the section */
+  background-color: white; /* Light mode background color */
+  color: black; /* Light mode text color */
+  text-align: left; /* Align text to the left */
+}
+
+/* Styles for dark mode */
+body.dark-mode .about-me {
+  background-color: black; /* Dark mode background color */
+  color: white; /* Dark mode text color */
+}
+
+.my-name {
+  padding-left: 200px;
+  font-size: 82px; /* Font size for the name */
+  margin-bottom: 10px; /* Space below the name */
+}
+
+.funny-tagline {
+  padding-left: 220px;
+  font-size: 20px; /* Font size for the tagline */
+}
+
+/* Media Queries */
+
+/* Desktops */
+@media (min-width: 1200px) {
+  /* Styles specific to large desktops can go here */
+}
+
+/* Laptops (15.6") */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Styles specific to laptops can go here */
+}
+
+/* Laptops (14") */
+@media (min-width: 900px) and (max-width: 1023px) {
+  /* Styles specific to smaller laptops can go here */
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 899px) {
+  /* Common styles for tablets */
+  
+  .my-name {
+    font-size: 30px; /* Smaller font size for the name on tablets */
+  }
+  
+  .funny-tagline {
+    font-size: 16px; /* Smaller font size for the tagline on tablets */
+  }
+
+  .about-section {
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Auto height for tablets */
+  }
+
+  .left-half,
+  .right-half {
+    width: 100%; /* Full width on tablets */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+
+  .profile-image {
+    margin-bottom: 20px; /* Space between image and text on tablets */
+  }
+
+  .greeting {
+    font-size: 24px; /* Smaller font size for tablets */
+  }
+
+  .nav-links {
+    display: none; /* Hides navigation links by default on tablets */
+    flex-direction: column; /* Stacks links vertically */
+    background-color: white; /* White background color for the dropdown menu in light mode */
+    position: absolute; /* Positions dropdown menu absolutely */
+    top: 100%; /* Positions the dropdown directly below the navbar */
+    right: 0; /* Aligns dropdown to the right side of the screen */
+    width: 200px; /* Set a fixed width for the dropdown */
+  }
+
+  /* Shows the nav links when the menu toggle is checked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex; /* Displays the dropdown menu */
+  }
+
+  /* In tablet view, increase padding and add a border on top of links */
+  .nav-links a {
+    padding: 1em; /* Increases padding for links in tablet view */
+    border-top: 1px solid rgb(255, 255, 255); /* Adds a border between links */
+    color: black; /* Black text color for links in light mode */
+    text-align: left; /* Aligns text to the left within the links */
+    box-shadow: none; /* Remove box shadow from links */
+  }
+
+  /* Hover effect for navigation links in tablet */
+  .nav-links a:hover {
+    background-color: #e6e6fa; /* Lilac color on hover */
+    color: black; /* Keep text color black on hover */
+  }
+
+  /* Dark Mode styles for the dropdown */
+  body.dark-mode .nav-links {
+    background-color: black; /* Black background color for the dropdown menu in dark mode */
+  }
+
+  /* Dark Mode styles for links in dropdown */
+  body.dark-mode .nav-links a {
+    color: white; /* White text color for links in dark mode */
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 767px) {
+  .hamburger {
+    display: block; /* Shows the hamburger icon on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hides navigation links by default on mobile */
+    flex-direction: column; /* Stacks links vertically */
+    background-color: white; /* White background color for the dropdown menu in light mode */
+    position: absolute; /* Positions dropdown menu absolutely */
+    top: 100%; /* Positions the dropdown directly below the navbar */
+    right: 0; /* Aligns dropdown to the right side of the screen */
+    width: 200px; /* Set a fixed width for the dropdown */
+  }
+
+  /* Shows the nav links when the menu toggle is checked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex; /* Displays the dropdown menu */
+  }
+
+  /* In mobile view, increase padding and add a border on top of links */
+  .nav-links a {
+    padding: 1em; /* Increases padding for links in mobile view */
+    border-top: 1px solid rgb(255, 255, 255); /* Adds a border between links */
+    color: black; /* Black text color for links in light mode */
+    text-align: left; /* Aligns text to the left within the links */
+    box-shadow: none; /* Remove box shadow from links */
+  }
+
+  /* Hover effect for navigation links in mobile */
+  .nav-links a:hover {
+    background-color: #e6e6fa; /* Lilac color on hover */
+    color: black; /* Keep text color black on hover */
+  }
+
+  /* Dark Mode styles for the dropdown */
+  body.dark-mode .nav-links {
+    background-color: black; /* Black background color for the dropdown menu in dark mode */
+  }
+
+  /* Dark Mode styles for links in dropdown */
+  body.dark-mode .nav-links a {
+    color: white; /* White text color for links in dark mode */
+  }
+
+  .about-me {
+    padding-left: 0; /* Remove left padding on mobile */
+    text-align: center; /* Center-align on smaller screens */
+  }
+}
