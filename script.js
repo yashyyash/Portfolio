@@ -143,3 +143,5 @@ window.onload = () => {
 document.getElementById('resumeButton').addEventListener('click', function () {
     window.location.href = "visuals/YashResume.pdf";  // Change path if needed
 });
+
+// comment jaruri hai
