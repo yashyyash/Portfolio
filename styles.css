@@ -1,0 +1,555 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-section,
+.about-us,
+.color-buttons-section,
+.footer {
+    margin-bottom: 6%; /* Adjust this value for more or less space */
+}
+/* Adjust the footer margin if needed to ensure it's spaced properly from the previous section */
+.footer {
+    margin-top: 2%; /* Adjust this if you want more space above the footer */
+}
+/* Overall body and html settings */
+html, body {
+    height: 100%; /* Full height for the body */
+    margin: 0; /* Remove default margin */
+}
+
+/* Navbar height */
+nav {
+    height: 5vh; /* Navbar takes up 10% of the viewport height */
+}
+
+body {
+    background-color: white; /* White background */
+    color: black; /* Black text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    padding: 15px;
+}
+
+/* Site title */
+.site-title {
+    margin-right: auto; /* Push the title to the left */
+}
+
+/* Navigation controls */
+.nav-controls {
+    display: flex; /* Use flexbox for controls */
+    align-items: center; /* Center controls vertically */
+}
+
+/* Hamburger button styles */
+.hamburger {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Display as flex */
+    flex-direction: column; /* Stack bars vertically */
+}
+
+.bar {
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    background-color: black; /* Black bars */
+    margin: 3px 0; /* Space between bars */
+}
+
+/* Navigation links */
+.nav-links {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for links */
+    position: fixed; /* Fix position for sliding effect */
+    right: -250px; /* Start hidden off-screen */
+    top: 0; /* Align at the top */
+    height: 100vh; /* Full height */
+    width: 250px; /* Width of the sidebar */
+    background-color: white; /* Background color */
+    padding: 20px; /* Padding inside the nav links */
+    transition: right 0.3s ease; /* Transition for sliding effect */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect on the sidebar */
+    z-index: 100; /* Ensure it appears above other content */
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Show the nav links when toggled */
+.nav-links.show {
+    right: 0; /* Slide in from the right */
+}
+
+.nav-links li {
+    margin: 15px 0; /* Space out links */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Black text for links */
+}
+
+/* Close button styles */
+.close-button {
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 24px; /* Font size for close button */
+    color: black; /* Black color for close button */
+    cursor: pointer; /* Pointer cursor on hover */
+    align-self: flex-end; /* Align to the right */
+    margin-bottom: 20px; /* Space below the close button */
+}
+
+/* Button styles */
+button {
+    background-color: rgba(169, 169, 169, 0); /* Dark button */
+    color: white; /* White text on button */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding around button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Main section styles */
+.main-section {
+    margin-top: 2%;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    height: 10vh; /* Set height to 30% of viewport height */
+    text-align: left; /* Align text to the left */
+    padding: 20px; /* Padding inside the section */
+    margin-left: 25%; /* Margin from the left side of the screen */
+}
+
+.main-section h2 {
+    margin-bottom: 0.5%; /* Space below the heading */
+    font-size: 3em; /* Change this value to your desired size for the heading */
+}
+
+.main-section p {
+    margin-bottom: 1%; /* Reset margin for paragraph */
+    font-size: 1.5em; /* Change this value to your desired size for the paragraph */
+}
+/* Main section styles end */
+
+/* About Us Section Start */
+.about-us {
+    margin: 20px 25%; /* 15% margin from both sides */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content */
+    align-items: stretch; /* Stretch to maintain alignment */
+}
+
+.about-container {
+    display: flex; /* Flex container for the inner content */
+    width: 100%; /* Full width of the parent */
+}
+
+.image-container {
+    flex: 0 0 30%; /* 30% width for the image container */
+    display: flex; /* Flexbox for centering the image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    max-width: 80%; /* Set a maximum width for the image */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+.round-image {
+    width: 100%; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image round */
+}
+
+.text-container {
+    flex: 1; /* Allow text container to grow */
+    display: flex; /* Use flex for vertical stacking */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+}
+
+.text-left {
+    display: flex; /* Flexbox for centering */
+    justify-content: flex-start; /* Align text to the start */
+    align-items: center; /* Center vertically */
+    min-height: 60px; /* Set a minimum height */
+}
+
+.text-left h3 {
+    margin-left: 2%;
+    font-size: 5em; /* Adjust this value to your desired size */
+    min-height: 115px;
+}
+
+.text-right {
+    flex: 1; /* Allow text-right to grow */
+    padding-left: 50px; /* Space between the sections */
+}
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin-left: 0.5%;
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+/* about us end */
+
+/* Footer styles */
+.footer {
+    margin-top: 2%;
+    text-align: center; /* Center footer text */
+    padding: 15px; /* Padding for footer */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black; /* Black background when dark mode */
+    color: white; /* White text when dark mode */
+}
+
+body.dark-mode .navbar a {
+    color: white; /* White links when dark mode */
+}
+
+body.dark-mode button {
+    background-color: black; /* Light button color when dark mode */
+}
+
+/* Dark mode for nav links */
+body.dark-mode .nav-links {
+    background-color: #000000; /* Dark background for the pop-out menu */
+    color: white; /* White text for nav links in dark mode */
+    box-shadow: none; /* Remove shadow effect in dark mode */
+}
+
+body.dark-mode .nav-links a {
+    color: white; /* White text for links in dark mode */
+}
+
+body.dark-mode .close-button {
+    color: white; /* White close button in dark mode */
+}
+body.dark-mode .bar {
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    background-color: rgb(255, 255, 255); /* Black bars */
+    margin: 3px 0; /* Space between bars */
+}
+
+/* New section styling */
+.color-buttons-section {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Height set to 10% of viewport */
+}
+
+.button-container {
+    display: flex;
+    gap: 20px; /* Spacing between buttons */
+}
+
+/* Button styles */
+/* New section styling */
+.color-buttons-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+.button-container a {
+    /* Make anchor behave like a button */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 50%; /* Rounded corners */
+    color: white; /* Text color */
+    /* Add other button styles as needed */
+}
+
+/* Button styles */
+.color-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circle shape */
+    font-size: 1em;
+    font-weight: bold;
+    color: white; /* Text color in light mode */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Clip shine effect within button */
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.4), /* Inner shine */
+                0 8px 20px rgba(0, 0, 0, 0.4); /* Outer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-blend-mode: overlay;
+}
+
+/* Intense glossy metallic colors */
+.color-button.lilac {
+    background: linear-gradient(135deg, #7b61a5, #9f86c0); /* Richer metallic lilac */
+}
+
+.color-button.teal {
+    background: linear-gradient(135deg, #3b9a9f, #6fc1c6); /* Deep metallic teal */
+}
+
+.color-button.blue {
+    background: linear-gradient(135deg, #3f5eb5, #798de3); /* Deep royal blue */
+}
+
+.color-button.rose {
+    background: linear-gradient(135deg, #a14a5d, #d16b80); /* Dark metallic rose */
+}
+
+/* Add intense shine effect */
+.color-button::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.25); /* Softer white overlay for shine */
+    background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.7), transparent 60%); /* Radial shine */
+    transform: rotate(45deg); /* Angle for diagonal shine */
+    transition: transform 0.5s ease;
+}
+
+.color-button:hover::before {
+    transform: translateX(120%) translateY(120%) rotate(45deg); /* Shine effect movement */
+}
+
+/* Click burst effect */
+.color-button:active {
+    transform: scale(0.92); /* Slightly reduce size on click */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.3); /* Burst effect */
+}
+
+/* Dark mode adjustments */
+body.dark-mode .color-button {
+    color: black; /* Text color in dark mode */
+    box-shadow: 
+        inset 0 0 10px rgba(255, 255, 255, 0.3), /* Dark inner shadow with white tint */
+        0 6px 15px rgba(255, 255, 255, 0.5); /* White shadow effect in dark mode */
+}
+body .dark-mode .bar {
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    background-color: white; /* Black bars */
+    margin: 3px 0; /* Space between bars */
+}
+/* Footer styles */
+
+/* Button section for social icons */
+.button-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center icons horizontally */
+    margin-bottom: 10px; /* Space below icons */
+}
+
+/* Specific button colors */
+.lilac {
+    background-color: #5c4b8a; /* Example lilac color */
+}
+
+.teal {
+    background-color: #008080; /* Example teal color */
+}
+
+.blue {
+    background-color: #007bff; /* Example blue color */
+}
+
+.rose {
+    background-color: #e63946; /* Example rose color */
+}
+/* ---------------------------------------------------------------------------------------------- */
+
+/* Media Queries for Phone Devices */
+@media (max-width: 600px) {
+    nav {
+        height: 10vh; /* Increase navbar height for better touch targets */
+    }
+
+    .main-section {
+        margin-left: 5%; /* Reduce left margin for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .main-section h2 {
+        font-size: 2em; /* Smaller font size for headings */
+    }
+
+    .main-section p {
+        font-size: 1.2em; /* Smaller font size for paragraphs */
+    }
+
+    .about-us {
+        margin: 10px 5%; /* Reduce margins for smaller screens */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack inner items vertically */
+        align-items: center; /* Center align all items in the about container */
+    }
+
+    .image-container {
+        flex: 0 0 100%; /* Full width for image container */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center the image horizontally */
+        margin-bottom: 10px; /* Reduce space below the image */
+    }
+
+    .round-image {
+        width: 80%; /* Adjust size as needed */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 50%; /* Make the image round */
+    }
+
+    .text-container {
+        flex: 1; /* Allow text container to grow */
+        padding: 0; /* Remove padding */
+    }
+
+    .text-left h3 {
+        margin-left: 10%;
+        font-size: 2.5em; /* Reduce font size for heading */
+        margin-bottom: -12%; /* Remove margin */
+    }
+
+    .text-right h2 {
+        font-size: 1.2em; /* Reduce font size for About Me heading */
+    }
+
+    .text-right ul {
+        padding: 0; /* Remove padding from the list */
+    }
+
+    .text-right li {
+        font-size: 1em; /* Smaller font size for list items */
+        margin-bottom: 5px; /* Space between list items */
+    }
+
+    .color-buttons-section {
+        height: auto; /* Allow height to adjust */
+        flex-direction: row; /* Stack buttons vertically */
+    }
+
+    .button-container {
+        flex-direction: row; /* Stack buttons vertically */
+        gap: 10px; /* Reduce spacing between buttons */
+    }
+
+    .color-button {
+        width: 60px; /* Smaller button size */
+        height: 60px; /* Smaller button size */
+        font-size: 0.9em; /* Smaller font size */
+    }
+
+}
+/* -----------------------------------------phone ends---------------------------------- */
+
+
+
+
+
+
+/* Media Queries for Tablet Devices */
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav {
+        height: 8vh; /* Adjust navbar height for tablets */
+    }
+
+    .main-section {
+        margin-left: 10%; /* Set a moderate left margin for tablets */
+        padding: 15px; /* Adjust padding for tablets */
+    }
+
+    .main-section h2 {
+        font-size: 2.5em; /* Slightly smaller font size for headings */
+    }
+
+    .main-section p {
+        font-size: 1.4em; /* Adjust font size for paragraphs */
+    }
+
+    .about-us {
+        margin: 15px 10%; /* Moderate margins for tablets */
+        flex-direction: row; /* Keep items in a row layout */
+    }
+
+    .about-container {
+        flex-direction: row; /* Maintain row layout for inner items */
+    }
+
+    .image-container {
+        flex: 0 0 40%; /* Set a width for the image container */
+        margin-bottom: 15px; /* Space below the image */
+    }
+
+    .text-container {
+        flex: 1; /* Allow text container to grow */
+        padding: 10px; /* Add some padding */
+    }
+
+    .color-buttons-section {
+        height: auto; /* Allow height to adjust */
+        flex-direction: row; /* Keep buttons in a row layout */
+    }
+
+    .button-container {
+        flex-direction: row; /* Keep buttons in a row layout */
+        gap: 15px; /* Moderate spacing between buttons */
+    }
+
+    .color-button {
+        width: 70px; /* Slightly larger button size */
+        height: 70px; /* Slightly larger button size */
+        font-size: 1em; /* Adjust font size */
+    }
+
+}
+
+
+/* tablet Ends */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
