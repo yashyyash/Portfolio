@@ -13,21 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'  # Using Node.js version 20
-
-    - name: Install dependencies
-      run: npm install  # Install project dependencies (if applicable)
-
-    - name: Build the project (if applicable)
-      run: npm run build # Only if you have a build step
-
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages  # Deploy to the gh-pages branch
         folder: ./  # Root folder of the repository (assuming static files)
         token: ${{ secrets.GITHUB_TOKEN }}  # GitHub's secret token for actions
-
