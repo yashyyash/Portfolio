@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write  # Required permission to allow OIDC-based token request
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
