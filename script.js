@@ -81,3 +81,65 @@ document.addEventListener('click', function(event) {
         navLinks.classList.remove('show'); // Hide nav links
     }
 });
+
+// JavaScript to handle the loading effect and reveal the button
+// JavaScript to handle the loading effect and reveal the button
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        document.querySelector(".resume-section").classList.add("loaded");
+    }, 0); // Immediately add loaded class
+});
+
+// Array of random emojis to simulate the "Matrix" effect
+const characters = [
+    '😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😜', '😝', '😛', '🤑', '🤗', '🤩', '🤔',
+    '🤨', '😐', '😑', '😶', '🙄', '😌', '😔', '😪', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥳', '🥴', '😵', '🤯', '😳', '🥺',
+    '😡', '😠', '🤬', '😤', '😈', '👿', '💀', '👻', '💩', '🧠', '💡', '🔌', '📱', '💻', '🖥', '💾', '📝', '📓', '📚', '📖'
+];
+
+// Create Matrix effect with random falling emojis
+function createMatrixEffect() {
+    const matrixEffectContainer = document.querySelector('.matrix-effect');
+    let lineCount = 0;
+
+    // Slow-start interval, gradually reducing the interval time for a speed-up effect
+    let initialInterval = 500; // Start slow
+    const intervalStep = 20; // Reduce interval time by 20ms each time, until faster rate is reached
+    const maxLines = 20; // Stop after 20 lines
+
+    const intervalID = setInterval(() => {
+        const matrixLine = document.createElement('div');
+        matrixLine.classList.add('matrix-line');
+        matrixLine.style.left = `${Math.random() * 100}%`;  // Random start position
+        matrixLine.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation speed
+        matrixLine.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+
+        let lineText = '';
+        for (let i = 0; i < 20; i++) {
+            lineText += characters[Math.floor(Math.random() * characters.length)] + ' ';
+        }
+
+        matrixLine.textContent = lineText;
+        matrixEffectContainer.appendChild(matrixLine);
+
+        lineCount++;
+        initialInterval = Math.max(initialInterval - intervalStep, 100); // Slow start, faster after reaching 100ms
+        clearInterval(intervalID);
+
+        if (lineCount < maxLines) {
+            createMatrixEffect();
+        }
+    }, initialInterval);
+}
+
+// Trigger the Matrix effect on page load
+window.onload = () => {
+    createMatrixEffect();
+    document.querySelector('.resume-button-container').style.opacity = 1;
+    document.querySelector('.resume-button-container').style.animation = 'fallDown 2s ease-in-out 2s forwards';
+};
+
+// Download button functionality
+document.getElementById('resumeButton').addEventListener('click', function () {
+    window.location.href = "visuals/YashResume.pdf";  // Change path if needed
+});
