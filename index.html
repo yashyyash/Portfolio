@@ -1,75 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="icon" href="./visuals/pagalbilla.png" type="image/png">
+    <title>Portfolio Website</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png" href="./visuals/pagalbilla.png"> 
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
-        <h1 class="site-title"></h1>
-        <div class="nav-controls">
-            <button id="themeToggleButton" aria-label="Toggle theme">
-                <span id="toggleIcon">🌞</span>
-            </button>
-            <button id="hamburgerButton" aria-label="Toggle navigation" class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </button>
+        <div class="navbar-content">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
         </div>
     </nav>
 
-    <ul class="nav-links">
-        <button id="closeButton" aria-label="Close navigation" class="close-button">✖</button> <!-- Close button -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="./loading.html">Projects</a></li>
-        <li><a href="./loading.html">Blogs</a></li>
-        <li><a href="./resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <main class="main-section">
-        <h2>Yash Mutatkar</h2>
-        <p>DevOps | Backend | Frontend | System Design</p>
-    </main>
-    
-    <section class="about-us">
-        <div class="about-container">
-            <div class="image-container">
-                <img src="./visuals/profile-pic.png" alt="About Us Image" class="round-image">
+    <!-- Main Content -->
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <div class="text-content">
+                <h1>Hello, This is Yash Mutatkar</h1>
+                <p>Frontend | Backend | Devops</p>
             </div>
-            <div class="text-container">
-                <div class="text-left">
-                    <h3><span id="typewriter"></span></h3> <!-- Wrap "Hello" in a span -->
-                </div>
-                <div class="text-right">
-                    <h2>About Me</h2>
-                    <ul>
-                        <li>• Problem solver by day, ChatGPT sidekick by night. 🧠</li>
-                        <li>• Passionate coder, efficient debugger, and occasional procrastinator. ⏳</li>
-                        <li>• While using pointers, sometimes they point in the wrong direction. 🤷‍♂️</li>
-                        <li>• I build robust systems... and occasionally a bug feature. 🐞</li>
-                        <li>• Serious about work, but believe humor fuels creativity. 🎨</li>
-                    </ul>
-                </div>
+            <img src="./visuals/profile-pic.png" alt="Yash Mutatkar" class="profile-pic">
+        </div>
+    </section>
+    <hr class="section-divider">
+    
+    <!-- About Me Section -->
+    <section id="about-me">
+        <h2>About Me</h2>
+        <p>
+            I am a DevOps Engineer at Pearlthoughts (currently an intern). With a degree in Computer Engineering, I aim to make a significant impact in the IT field. I have a strong foundation in software development and am passionate about technology. I'm seeking opportunities in software development and product management to continue learning and growing. I'm eager to contribute to impactful projects and further my career in IT.
+        </p>
+    </section>
+    <hr class="section-divider">
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <strong>Languages:</strong>
+                <ul>
+                    <li>C, C++, C#, Python, PHP, HTML, CSS, JavaScript, DBMS</li>
+                </ul>
+            
+                <strong>Frameworks & Tools:</strong>
+                <ul>
+                    <li>Pandas, Numpy, Matplotlib, .NET, Laravel, PyCharm, VS Code, Anaconda, Excel, MySQL, PostgreSQL</li>
+                </ul>
+            
+                <strong>Platforms:</strong>
+                <ul>
+                    <li>Linux, Windows</li>
+                </ul>
+            
+                <strong>Web Technologies:</strong>
+                <ul>
+                    <li>PHP, HTML, CSS, JS, Laravel</li>
+                </ul>
+            
+                <strong>Cloud Technologies:</strong>
+                <ul>
+                    <li>AWS, Terraform, Ansible, GitHub Actions</li>
+                </ul>
+            
+                <strong>Soft Skills:</strong>
+                <ul>
+                    <li>Rapport Building, Stakeholder Management, People Management, Communication</li>
+                </ul>
             </div>
         </div>
     </section>
-    
-    <section class="color-buttons-section">
-        <div class="button-container">
-            <a href="./index.html" class="color-button rose">Home</a>
-            <a href="./loading.html" class="color-button lilac">Project</a>
-            <a href="http://3.93.23.16/hello.php" class="color-button teal">Blogs</a>
-            <a href="./resume.html" class="color-button blue">Resume</a>
-            <a href="./contact.html" class="color-button rose">Contact</a>
+    <hr class="section-divider">
+
+    <!-- Work Experience Section -->
+    <section id="work-experience">
+        <h2>Work Experience</h2>
+        <div class="experience">
+            <h3>PearlThoughts – DevOps Engineer</h3>
+            <p class="date">(September 2024 – Present)</p>
+            <ul>
+                <li>
+                    Led the integration and deployment of key systems on the production server,
+                    leveraging cloud infrastructure tools (EC2, ECS, and ECR) to improve infrastructure
+                    performance.
+                </li>
+                <li>
+                    Streamlined deployment pipelines and enhanced CI/CD processes, minimizing
+                    downtime during production rollouts and optimizing system efficiency.
+                </li>
+                <li>
+                    Currently working on application integration with a cloud-based observability platform,
+                    focusing on implementing distributed tracing, logging, and metrics for improved system
+                    monitoring and performance analysis.
+                </li>
+            </ul>
         </div>
-    </section>        
+    </section>
+    <hr class="section-divider">
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="carousel-container">
+            <button class="carousel-button prev">❮</button>
+            <div class="projects-carousel">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="./visuals/Carpark.gif" alt="Project Image" class="project-image">
+                    <div class="project-info">
+                        <h4>Efficient Car Parking System</h4>
+                        <p>Developed using SSD320.</p>
+                        <a href="https://github.com/yashyyash/Car-Park-Project" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="./visuals/onssop.gif" alt="Project Image" class="project-image">
+                    <div class="project-info">
+                        <h4>Online Notes Sharing System</h4>
+                        <p>Built with PHP and MySQL.</p>
+                        <a href="https://github.com/yashyyash/ONSS" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <!-- Add more projects as necessary -->
+                <div class="project-card">
+                    <img src="./visuals/railwayop.gif" alt="Project Image" class="project-image">
+                    <div class="project-info">
+                        <h4>Railway Management System</h4>
+                        <p>Built with C.</p>
+                        <a href="https://github.com/yashyyash/Railway_Management_System_in_C" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <!-- Add more projects as necessary -->
+                <div class="project-card">
+                    <img src="./visuals/Portfolio - Made with Clipchamp.gif" alt="Project Image" class="project-image">
+                    <div class="project-info">
+                        <h4>Portfolio Website</h4>
+                        <p>Built with HTML ,CSS & JS</p>
+                        <a href="https://github.com/yashyyash/Portfolio" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button next">❯</button>
+        </div>
+    </section>
+    
+    
+    
+    
+    <hr class="section-divider">
+            
+    <!-- Blogs Section -->
+    <section id="blogs">
+        <h2>Blogs</h2>
+        <p>Check out my latest blog posts. Stay tuned for more!</p>
+        <a href="blogs.html" target="_blank">Visit My Blog</a>
+    </section>
+    <hr class="section-divider">
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out!</p>
+        <p>Call: 8828255800</p>
+        <p>Email: <a href="mailto:yashnil532@gmail.com">yashnil532@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yash-mutatkar" target="_blank">www.linkedin.com/in/yash-mutatkar</a></p>
+        <p>GitHub: <a href="https://github.com/yashyyash" target="_blank">https://github.com/yashyyash</a></p>
+    </section>
+    <hr class="section-divider">
+        
     <script src="./script.js"></script>
 </body>
 </html>
-<!-- best comments -->

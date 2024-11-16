@@ -1,884 +1,448 @@
-/* Basic reset */
+/* Global Styles: Apply general styles to all elements to reset default browser styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.main-section,
-.about-us,
-.color-buttons-section,
-.footer {
-    margin-bottom: 6%; /* Adjust this value for more or less space */
-}
-/* Adjust the footer margin if needed to ensure it's spaced properly from the previous section */
-.footer {
-    margin-top: 2%; /* Adjust this if you want more space above the footer */
-}
-/* Overall body and html settings */
-html, body {
-    height: 100%; /* Full height for the body */
-    margin: 0; /* Remove default margin */
-}
-
-/* Navbar height */
-nav {
-    height: 5vh; /* Navbar takes up 10% of the viewport height */
-}
 
 body {
-    background-color: white; /* White background */
-    color: black; /* Black text color */
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* Improve readability */
 }
 
-/* Navbar styles */
+/* Dark Mode Styles: Define styling when dark mode is active */
+body.dark-mode {
+    background-color: black;
+    color: white;
+    /* Ensure text is visible on a dark background */
+}
+
+body.dark-mode .navbar,
+.dark-mode-btn {
+    background-color: black;
+    color: white;
+    /* Match the dark mode colors for consistency */
+}
+
+body.dark-mode .section-divider {
+    background: linear-gradient(to right, #E0E0E0 0%, transparent 30%, #E0E0E0 70%, #E0E0E0 100%);
+    /* Add a decorative line */
+}
+
+body.dark-mode .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Slightly opaque for a translucent effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .project-info h4,
+body.dark-mode .project-info p {
+    color: white;
+    /* Ensure text contrast */
+}
+
+body.dark-mode .project-link {
+    background-color: #FF7043;
+    /* Bright color for contrast */
+    color: #FFFFFF;
+}
+
+body.dark-mode .project-link:hover {
+    background-color: #FF5722;
+    /* Darken on hover for visual feedback */
+}
+
+body.dark-mode .carousel-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FF7043;
+    /* Stand out against the dark background */
+}
+
+body.dark-mode .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly lighter on hover */
+}
+
+/* Light Mode Styles: Define styling when light mode is active */
+body.light-mode {
+    background-color: #FAFAFA;
+    color: #333333;
+    /* Use dark font color for readability */
+}
+
+body.light-mode .navbar,
+.light-mode-btn {
+    background-color: #FFFFFF;
+    /* Light colors for a clean look */
+    color: #333333;
+}
+
+body.light-mode .section-divider {
+    background: linear-gradient(to right, #333333 0%, transparent 30%, #333333 70%, #333333 100%);
+    /* Consistent gradient styling */
+}
+
+body.light-mode .project-card {
+    background: rgba(0, 0, 0, 0.05);
+    /* Subtle background color */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .project-info h4,
+body.light-mode .project-info p {
+    color: #333333;
+    /* Ensure visibility against the light background */
+}
+
+body.light-mode .project-link {
+    background-color: #42A5F5;
+    /* Blue button color */
+    color: #FFFFFF;
+}
+
+body.light-mode .project-link:hover {
+    background-color: #1E88E5;
+    /* Slightly darker on hover */
+}
+
+body.light-mode .carousel-button {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333333;
+}
+
+body.light-mode .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Darken on hover */
+}
+
+/* Navbar Styles: Define styles for the navigation bar */
 .navbar {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out items */
-    align-items: center; /* Center items vertically */
-    padding: 15px;
+    position: sticky;
+    /* Make navbar stick at top */
+    top: 0;
+    padding: 15px 0;
+    z-index: 1000;
+    /* Ensure it's above other content */
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Site title */
-.site-title {
-    margin-right: auto; /* Push the title to the left */
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    /* Space out items evenly */
+    align-items: center;
+    width: 90%;
+    /* Maintain internal margin */
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Navigation controls */
-.nav-controls {
-    display: flex; /* Use flexbox for controls */
-    align-items: center; /* Center controls vertically */
-}
-
-/* Hamburger button styles */
-.hamburger {
-    background: none; /* No background */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: flex; /* Display as flex */
-    flex-direction: column; /* Stack bars vertically */
-}
-
-.bar {
-    height: 3px; /* Height of each bar */
-    width: 25px; /* Width of each bar */
-    background-color: black; /* Black bars */
-    margin: 3px 0; /* Space between bars */
-}
-
-/* Navigation links */
 .nav-links {
-    list-style-type: none; /* Remove bullet points */
-    display: flex; /* Use flexbox for links */
-    position: fixed; /* Fix position for sliding effect */
-    right: -250px; /* Start hidden off-screen */
-    top: 0; /* Align at the top */
-    height: 100vh; /* Full height */
-    width: 250px; /* Width of the sidebar */
-    background-color: white; /* Background color */
-    padding: 20px; /* Padding inside the nav links */
-    transition: right 0.3s ease; /* Transition for sliding effect */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect on the sidebar */
-    z-index: 100; /* Ensure it appears above other content */
-    flex-direction: column; /* Stack items vertically */
-}
-
-/* Show the nav links when toggled */
-.nav-links.show {
-    right: 0; /* Slide in from the right */
-}
-
-.nav-links li {
-    margin: 15px 0; /* Space out links */
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    /* Space between list items */
 }
 
 .nav-links a {
-    text-decoration: none; /* Remove underline */
-    color: black; /* Black text for links */
-}
-
-/* Close button styles */
-.close-button {
-    background: none; /* No background */
-    border: none; /* No border */
-    font-size: 24px; /* Font size for close button */
-    color: black; /* Black color for close button */
-    cursor: pointer; /* Pointer cursor on hover */
-    align-self: flex-end; /* Align to the right */
-    margin-bottom: 20px; /* Space below the close button */
-}
-
-/* Button styles */
-button {
-    background-color: rgba(169, 169, 169, 0); /* Dark button */
-    color: white; /* White text on button */
-    border: none; /* No border */
-    padding: 10px 15px; /* Padding around button */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-/* Main section styles */
-.main-section {
-    margin-top: 2%;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align items to the start (left) */
-    height: 10vh; /* Set height to 30% of viewport height */
-    text-align: left; /* Align text to the left */
-    padding: 20px; /* Padding inside the section */
-    margin-left: 25%; /* Margin from the left side of the screen */
-}
-
-.main-section h2 {
-    margin-bottom: 0.5%; /* Space below the heading */
-    font-size: 3em; /* Change this value to your desired size for the heading */
-}
-
-.main-section p {
-    margin-bottom: 1%; /* Reset margin for paragraph */
-    font-size: 1.5em; /* Change this value to your desired size for the paragraph */
-}
-/* Main section styles end */
-
-/* About Us Section Start */
-.about-us {
-    margin: 20px 25%; /* 15% margin from both sides */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the content */
-    align-items: stretch; /* Stretch to maintain alignment */
-}
-
-.about-container {
-    display: flex; /* Flex container for the inner content */
-    width: 100%; /* Full width of the parent */
-}
-
-.image-container {
-    flex: 0 0 30%; /* 30% width for the image container */
-    display: flex; /* Flexbox for centering the image */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    max-width: 80%; /* Set a maximum width for the image */
-    margin-bottom: 15px; /* Space below the image */
-}
-
-.round-image {
-    width: 100%; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make the image round */
-}
-
-.text-container {
-    flex: 1; /* Allow text container to grow */
-    display: flex; /* Use flex for vertical stacking */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center content vertically */
-}
-
-.text-left {
-    display: flex; /* Flexbox for centering */
-    justify-content: flex-start; /* Align text to the start */
-    align-items: center; /* Center vertically */
-    min-height: 60px; /* Set a minimum height */
-}
-
-.text-left h3 {
-    margin-left: 2%;
-    font-size: 5em; /* Adjust this value to your desired size */
-    min-height: 115px;
-}
-
-.text-right {
-    flex: 1; /* Allow text-right to grow */
-    padding-left: 50px; /* Space between the sections */
-}
-ul {
-    list-style-type: none; /* Remove default bullets */
-    padding: 0; /* Remove padding */
-}
-
-li {
-    margin-left: 0.5%;
-    margin-bottom: 10px; /* Space between list items */
-    font-size: 1.2em; /* Adjust font size as needed */
-}
-/* about us end */
-
-/* Footer styles */
-.footer {
-    margin-top: 2%;
-    text-align: center; /* Center footer text */
-    padding: 15px; /* Padding for footer */
-}
-
-/* Dark mode styles */
-body.dark-mode {
-    background-color: black; /* Black background when dark mode */
-    color: white; /* White text when dark mode */
-}
-
-body.dark-mode .navbar a {
-    color: white; /* White links when dark mode */
-}
-
-body.dark-mode button {
-    background-color: black; /* Light button color when dark mode */
-}
-
-/* Dark mode for nav links */
-body.dark-mode .nav-links {
-    background-color: #000000; /* Dark background for the pop-out menu */
-    color: white; /* White text for nav links in dark mode */
-    box-shadow: none; /* Remove shadow effect in dark mode */
-}
-
-body.dark-mode .nav-links a {
-    color: white; /* White text for links in dark mode */
-}
-
-body.dark-mode .close-button {
-    color: white; /* White close button in dark mode */
-}
-body.dark-mode .bar {
-    height: 3px; /* Height of each bar */
-    width: 25px; /* Width of each bar */
-    background-color: rgb(255, 255, 255); /* Black bars */
-    margin: 3px 0; /* Space between bars */
-}
-
-/* New section styling */
-.color-buttons-section {
-    margin-top: 3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh; /* Height set to 10% of viewport */
-}
-
-.button-container {
-    display: flex;
-    gap: 20px; /* Spacing between buttons */
-}
-
-/* Button styles */
-/* New section styling */
-.color-buttons-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-}
-
-.button-container {
-    display: flex;
-    gap: 20px; /* Space between buttons */
-}
-
-.button-container a {
-    /* Make anchor behave like a button */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 20px; /* Add padding */
-    border-radius: 50%; /* Rounded corners */
-    color: white; /* Text color */
-    /* Add other button styles as needed */
-}
-
-/* Button styles */
-.color-button {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /* Circle shape */
-    font-size: 1em;
-    font-weight: bold;
-    color: white; /* Text color in light mode */
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden; /* Clip shine effect within button */
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.4), /* Inner shine */
-                0 8px 20px rgba(0, 0, 0, 0.4); /* Outer shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-blend-mode: overlay;
-}
-
-/* Intense glossy metallic colors */
-.color-button.lilac {
-    background: linear-gradient(135deg, #7b61a5, #9f86c0); /* Richer metallic lilac */
-}
-
-.color-button.teal {
-    background: linear-gradient(135deg, #3b9a9f, #6fc1c6); /* Deep metallic teal */
-}
-
-.color-button.blue {
-    background: linear-gradient(135deg, #3f5eb5, #798de3); /* Deep royal blue */
-}
-
-.color-button.rose {
-    background: linear-gradient(135deg, #a14a5d, #d16b80); /* Dark metallic rose */
-}
-
-/* Add intense shine effect */
-.color-button::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 250%;
-    height: 250%;
-    background: rgba(255, 255, 255, 0.25); /* Softer white overlay for shine */
-    background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.7), transparent 60%); /* Radial shine */
-    transform: rotate(45deg); /* Angle for diagonal shine */
-    transition: transform 0.5s ease;
-}
-
-.color-button:hover::before {
-    transform: translateX(120%) translateY(120%) rotate(45deg); /* Shine effect movement */
-}
-
-/* Click burst effect */
-.color-button:active {
-    transform: scale(0.92); /* Slightly reduce size on click */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.3); /* Burst effect */
-}
-
-/* Dark mode adjustments */
-body.dark-mode .color-button {
-    color: black; /* Text color in dark mode */
-    box-shadow: 
-        inset 0 0 10px rgba(255, 255, 255, 0.3), /* Dark inner shadow with white tint */
-        0 6px 15px rgba(255, 255, 255, 0.5); /* White shadow effect in dark mode */
-}
-body .dark-mode .bar {
-    height: 3px; /* Height of each bar */
-    width: 25px; /* Width of each bar */
-    background-color: white; /* Black bars */
-    margin: 3px 0; /* Space between bars */
-}
-/* Footer styles */
-
-/* Button section for social icons */
-.button-section {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center icons horizontally */
-    margin-bottom: 10px; /* Space below icons */
-}
-
-/* Specific button colors */
-.lilac {
-    background-color: #5c4b8a; /* Example lilac color */
-}
-
-.teal {
-    background-color: #008080; /* Example teal color */
-}
-
-.blue {
-    background-color: #007bff; /* Example blue color */
-}
-
-.rose {
-    background-color: #e63946; /* Example rose color */
-}
-/* ---------------------------------------------------------------------------------------------- */
-
-/* Media Queries for Phone Devices */
-@media (max-width: 600px) {
-    nav {
-        height: 10vh; /* Increase navbar height for better touch targets */
-    }
-
-    .main-section {
-        margin-left: 5%; /* Reduce left margin for smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .main-section h2 {
-        font-size: 2em; /* Smaller font size for headings */
-    }
-
-    .main-section p {
-        font-size: 1.2em; /* Smaller font size for paragraphs */
-    }
-
-    .about-us {
-        margin: 10px 5%; /* Reduce margins for smaller screens */
-        flex-direction: column; /* Stack items vertically */
-    }
-
-    .about-container {
-        flex-direction: column; /* Stack inner items vertically */
-        align-items: center; /* Center align all items in the about container */
-    }
-
-    .image-container {
-        flex: 0 0 100%; /* Full width for image container */
-        display: flex; /* Use flexbox for centering */
-        justify-content: center; /* Center the image horizontally */
-        margin-bottom: 10px; /* Reduce space below the image */
-    }
-
-    .round-image {
-        width: 80%; /* Adjust size as needed */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 50%; /* Make the image round */
-    }
-
-    .text-container {
-        flex: 1; /* Allow text container to grow */
-        padding: 0; /* Remove padding */
-    }
-
-    .text-left h3 {
-        margin-left: 10%;
-        font-size: 2.5em; /* Reduce font size for heading */
-        margin-bottom: -12%; /* Remove margin */
-    }
-
-    .text-right h2 {
-        font-size: 1.2em; /* Reduce font size for About Me heading */
-    }
-
-    .text-right ul {
-        padding: 0; /* Remove padding from the list */
-    }
-
-    .text-right li {
-        font-size: 1em; /* Smaller font size for list items */
-        margin-bottom: 5px; /* Space between list items */
-    }
-
-    .color-buttons-section {
-        height: auto; /* Allow height to adjust */
-        flex-direction: row; /* Stack buttons vertically */
-    }
-
-    .button-container {
-        flex-direction: row; /* Stack buttons vertically */
-        gap: 10px; /* Reduce spacing between buttons */
-    }
-
-    .color-button {
-        width: 60px; /* Smaller button size */
-        height: 60px; /* Smaller button size */
-        font-size: 0.9em; /* Smaller font size */
-    }
-
-}
-/* -----------------------------------------phone ends---------------------------------- */
-
-
-
-
-
-
-/* Media Queries for Tablet Devices */
-@media (min-width: 601px) and (max-width: 1024px) {
-    nav {
-        height: 8vh; /* Adjust navbar height for tablets */
-    }
-
-    .main-section {
-        margin-left: 10%; /* Set a moderate left margin for tablets */
-        padding: 15px; /* Adjust padding for tablets */
-    }
-
-    .main-section h2 {
-        font-size: 2.5em; /* Slightly smaller font size for headings */
-    }
-
-    .main-section p {
-        font-size: 1.4em; /* Adjust font size for paragraphs */
-    }
-
-    .about-us {
-        margin: 15px 10%; /* Moderate margins for tablets */
-        flex-direction: row; /* Keep items in a row layout */
-    }
-
-    .about-container {
-        flex-direction: row; /* Maintain row layout for inner items */
-    }
-
-    .image-container {
-        flex: 0 0 40%; /* Set a width for the image container */
-        margin-bottom: 15px; /* Space below the image */
-    }
-
-    .text-container {
-        flex: 1; /* Allow text container to grow */
-        padding: 10px; /* Add some padding */
-    }
-
-    .color-buttons-section {
-        height: auto; /* Allow height to adjust */
-        flex-direction: row; /* Keep buttons in a row layout */
-    }
-
-    .button-container {
-        flex-direction: row; /* Keep buttons in a row layout */
-        gap: 15px; /* Moderate spacing between buttons */
-    }
-
-    .color-button {
-        width: 70px; /* Slightly larger button size */
-        height: 70px; /* Slightly larger button size */
-        font-size: 1em; /* Adjust font size */
-    }
-
-}
-
-
-/* tablet Ends */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Resume Section Styling */
-.resume-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75vh;
-    position: relative;
-    flex-direction: column;
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-    z-index: 1;
-    background-color: white; /* Light mode background */
-    transition: background-color 0.3s ease;
-}
-
-/* Dark mode background for the resume section */
-body.dark-mode .resume-section {
-    background-color: black;
-}
-
-/* Matrix Effect - Random words falling */
-.matrix-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.matrix-line {
-    position: absolute;
-    font-size: 24px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black; /* Light mode text color */
-    animation: fall 3s linear infinite;
-}
-
-body.dark-mode .matrix-line {
-    color: white; /* Dark mode text color */
-}
-
-@keyframes fall {
-    0% {
-        top: -100%;
-        opacity: 0;
-    }
-    100% {
-        top: 100%;
-        opacity: 1;
-    }
-}
-
-/* Resume Button Styling with Glitch Effect */
-.resume-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    animation: fallDown 1s ease-in-out 2s forwards;
-}
-
-.resume-button {
-    background-color: #0d6efd; /* Base color */
-    color: white;
-    font-size: 18px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-    z-index: 3;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3); /* Soft shadow */
-}
-
-/* Hover effect with pulse and glitch */
-.resume-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #0d6efd, 0 0 25px #0d6efd; /* Glow effect */
-}
-
-/* Pulse animation on hover */
-.resume-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle, rgba(13, 110, 253, 0.4), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 8px;
-    z-index: -1;
-}
-
-.resume-button:hover::before {
-    opacity: 1;
-    animation: pulse 1.5s infinite;
-}
-
-/* Glitch effect for the button */
-.resume-button::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    color: inherit;
-    border-radius: inherit;
-    opacity: 0.6;
-    z-index: -1;
-    pointer-events: none;
-    text-shadow: 1px 0 red, -1px 0 blue;
-    animation: glitch 1s infinite linear alternate;
-}
-
-@keyframes glitch {
-    0% {
-        clip-path: inset(0% 0% 15% 0%);
-    }
-    20% {
-        clip-path: inset(85% 0% 0% 0%);
-    }
-    40% {
-        clip-path: inset(15% 0% 70% 0%);
-    }
-    60% {
-        clip-path: inset(40% 0% 25% 0%);
-    }
-    80% {
-        clip-path: inset(60% 0% 10% 0%);
-    }
-    100% {
-        clip-path: inset(0% 0% 15% 0%);
-    }
-}
-
-/* Pulse animation */
-@keyframes pulse {
-    0% {
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.3;
-    }
-    100% {
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
-}
-
-/* Button fall down effect */
-@keyframes fallDown {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(20px);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Reset button fall after 5 seconds */
-@keyframes resetButtonFall {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(150px);
-        opacity: 0;
-    }
-}
-
-.resume-section.loaded .resume-button-container {
-    animation: fallDown 1s ease-in-out 2s forwards, resetButtonFall 1s ease-in-out 8s forwards;
-}
-
-/* Dark mode transitions */
-body.dark-mode {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Looping the Matrix effect */
-.matrix-line:nth-child(odd) {
-    animation-duration: 3s;
-}
-
-.matrix-line:nth-child(even) {
-    animation-duration: 4s;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Centered Sabar Section with fruit emojis */
-/* Centered Sabar Section with fruit emojis */
-.sabar-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh; /* Adjust height as needed */
-    background-size: auto;
-    background-repeat: repeat; /* Repeat emojis in a grid */
-    background-position: center;
-    transition: background-color 0.0s ease; /* Smooth transition for background */
-}
-
-.sabar-content {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 2.5rem;
-    font-weight: bold;
-    z-index: 1;
-    transition: color 0.3s ease; /* Smooth transition for text color */
-}
-
-/* Dark Mode Styling */
-body.dark-mode .sabar-section {
-    background-color: black; /* Dark background color */
-}
-
-body.dark-mode .sabar-content {
-    color: #f8f8f8; /* Lighter text color for better contrast in dark mode */
-}
-
-/* Sabar text styling */
-.sabar-text {
-    font-size: 2rem;
-    font-weight: bold;
-    animation: fadeIn 0s ease-in-out;
-}
-
-/* Animation for fade-in effect */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-
-/* best comment */
-
-/* New Contact Section Styling */
-.contact-section {
-    padding: 2rem;
-    background-color: white;
-    text-align: center;
-    border-radius: 8px;
-    margin-top: 2rem;
-}
-
-.contact-title {
-    font-size: 2.5rem;
-    color: black;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-}
-
-.contact-info p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: black;
-}
-
-.contact-info i {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-}
-
-.contact-info a {
-    color: #0073e6;
     text-decoration: none;
+    /* Remove underline from links */
     font-weight: bold;
+    transition: color 0.3s ease;
+    /* Smooth color transition */
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+.nav-links a:hover {
+    color: #FF7043;
+    /* Change color on hover for attention */
 }
 
-/* Night Mode Styling for Contact Section */
-body.dark-mode .contact-section {
-    background-color: black;
-    color: white;
+.dark-mode-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Gently animate enlarging */
 }
 
-body.dark-mode .contact-info p {
-    color: white;
+.dark-mode-btn:hover {
+    transform: scale(1.1);
+    /* Enlarge slightly on hover for feedback */
 }
 
-body.dark-mode .contact-title {
-    color: white;
+/* Section Styles: Style the main section areas */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
-body.dark-mode .contact-info a {
-    color: #4d94ff;
+.section-divider {
+    height: 2px;
+    width: 80%;
+    margin: 40px auto;
+    opacity: 0.7;
+    /* Semi-transparent for subtlety */
 }
 
+/* Home Section: Styles specific to the home section */
+#home {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically and horizontally */
+}
 
+.home-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* Space between content elements */
+    padding: 20px;
+}
+
+.text-content {
+    flex: 1;
+    /* Allow text to take up remaining space */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Make image circular */
+    object-fit: cover;
+    border: 3px solid;
+    /* Add border */
+}
+
+/* About Section: Specific styles for about and other sections */
+#about-me,
+#work-experience,
+#blogs,
+#contact {
+    text-align: left;
+    /* Align text to the left by default */
+}
+
+.skills-container,
+.skill-category,
+.experience,
+.date {
+    margin-top: 30px;
+    /* Space out sections */
+}
+
+.skill-category ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+/* Work Experience Section: Styling for career-related sections */
+.experience h3 {
+    color: #FF7043;
+    /* Highlight for emphasis */
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #888;
+    /* Use subdued color */
+    font-style: italic;
+    /* Differentiate date from other text */
+    margin-bottom: 15px;
+}
+
+/* Carousel Styles: Define the appearance of carousel elements */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Hide overflowing items */
+}
+
+.projects-carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transitions */
+}
+
+.project-card {
+    flex: 0 0 400px;
+    /* Fixed size for each card */
+    margin-right: 20px;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+    background: #FFFFFF;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    /* Enlarge card on hover */
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.project-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+.carousel-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    * {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .project-card {
+        flex: 0 0 300px;
+        /* Adjust card size */
+        margin-right: 15px;
+    }
+
+    .project-image {
+        width: 100%;
+        /* Match the smaller screen size */
+        height: 50%;
+    }
+
+    .profile-pic {
+        height: 150px;
+        width: 120px;
+        /* Match the smaller screen size */
+        height: 120px;
+    }
+
+    .home-content {
+        flex-direction: column-reverse;
+        /* Stack elements vertically */
+        text-align: center;
+        /* Center-align text */
+        gap: 20px;
+    }
+
+    section {
+        padding: 40px 20px;
+        /* Adjust padding */
+    }
+
+    .section-divider {
+        margin: 30px auto;
+        width: 90%;
+        /* Adjust to maintain layout */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        /* Smaller font size */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .project-card {
+        flex: 0 0 90%;
+        /* Larger card width for narrow screens */
+        margin-right: 10px;
+    }
+
+    .project-info h4 {
+        font-size: 1.2rem;
+        /* Adjust text size */
+    }
+
+    .project-info p {
+        font-size: 0.9rem;
+        /* Smaller text for readability */
+    }
+
+    .project-image {
+        width: 100%;
+        /* Match the smaller screen size */
+        height: 60%;
+    }
+
+    .nav-links {
+        gap: 15px;
+        /* Reduce spacing between links */
+    }
+
+    .profile-pic {
+        width: 30%;
+        /* Smaller profile pic */
+        height: 30%;
+    }
+
+    .section-divider {
+        margin: 20px auto;
+        width: 95%;
+        /* Adjust width */
+    }
+
+    section {
+        padding: 30px 15px;
+        /* Narrower padding */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
