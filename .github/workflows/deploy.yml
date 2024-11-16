@@ -1,27 +1,20 @@
-name: Deploy Portfolio to GitHub Pages
+name: Deploy Portfolio
 
 on:
   push:
     branches:
-      - master  # or 'main' if that's your default branch
+      - master  # Replace 'main' with the branch you're deploying from
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write  # Required permission to allow OIDC-based token request
-
     steps:
-    - name: Checkout repository
+    - name: Checkout Code
       uses: actions/checkout@v3
 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        branch: gh-pages  # Deploy to the gh-pages branch
-        folder: ./  # Root folder of the repository (assuming static files)
-        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub's secret token for actions
-
-
-        #yaar ye necessary comment hai 
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .  # The directory to deploy (root in your case)
