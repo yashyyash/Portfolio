@@ -334,6 +334,36 @@ section {
     right: 20px;
 }
 
+#download-cv {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cv-content h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.cv-content p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #45a049;
+}
+
 /* Responsive Design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     * {
@@ -444,5 +474,53 @@ section {
 
     h2 {
         font-size: 1.3rem;
+    }
+}
+
+/* Adjustments for smaller screens (tablets and below) */
+@media (max-width: 768px) {
+    #download-cv {
+        margin: 30px 0;
+        /* Adjust margin for mobile devices */
+    }
+
+    .cv-content h2 {
+        font-size: 1.8em;
+        /* Adjust heading size */
+    }
+
+    .cv-content p {
+        font-size: 1em;
+        /* Adjust paragraph font size */
+    }
+
+    .download-btn {
+        padding: 8px 16px;
+        font-size: 1em;
+        /* Reduce button size */
+    }
+}
+
+/* Further adjustments for very small screens (phones) */
+@media (max-width: 480px) {
+    #download-cv {
+        margin: 20px 0;
+        /* Adjust margin */
+    }
+
+    .cv-content h2 {
+        font-size: 1.5em;
+        /* Make heading smaller */
+    }
+
+    .cv-content p {
+        font-size: 0.9em;
+        /* Make paragraph font size smaller */
+    }
+
+    .download-btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+        /* Further reduce button size */
     }
 }
