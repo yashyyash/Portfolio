@@ -17,8 +17,8 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .  # The directory to deploy (root in your case)
-        branch: - master  # Ensure the branch is specified
+        publish_dir: .  
+        branch: master  
 
     - name: Notify Slack of Deployment Success
       if: success()
