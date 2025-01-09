@@ -1,0 +1,448 @@
+/* Global Styles: Apply general styles to all elements to reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* Improve readability */
+}
+
+/* Dark Mode Styles: Define styling when dark mode is active */
+body.dark-mode {
+    background-color: black;
+    color: white;
+    /* Ensure text is visible on a dark background */
+}
+
+body.dark-mode .navbar,
+.dark-mode-btn {
+    background-color: black;
+    color: white;
+    /* Match the dark mode colors for consistency */
+}
+
+body.dark-mode .section-divider {
+    background: linear-gradient(to right, #E0E0E0 0%, transparent 30%, #E0E0E0 70%, #E0E0E0 100%);
+    /* Add a decorative line */
+}
+
+body.dark-mode .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Slightly opaque for a translucent effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .project-info h4,
+body.dark-mode .project-info p {
+    color: white;
+    /* Ensure text contrast */
+}
+
+body.dark-mode .project-link {
+    background-color: #FF7043;
+    /* Bright color for contrast */
+    color: #FFFFFF;
+}
+
+body.dark-mode .project-link:hover {
+    background-color: #FF5722;
+    /* Darken on hover for visual feedback */
+}
+
+body.dark-mode .carousel-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FF7043;
+    /* Stand out against the dark background */
+}
+
+body.dark-mode .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly lighter on hover */
+}
+
+/* Light Mode Styles: Define styling when light mode is active */
+body.light-mode {
+    background-color: #FAFAFA;
+    color: #333333;
+    /* Use dark font color for readability */
+}
+
+body.light-mode .navbar,
+.light-mode-btn {
+    background-color: #FFFFFF;
+    /* Light colors for a clean look */
+    color: #333333;
+}
+
+body.light-mode .section-divider {
+    background: linear-gradient(to right, #333333 0%, transparent 30%, #333333 70%, #333333 100%);
+    /* Consistent gradient styling */
+}
+
+body.light-mode .project-card {
+    background: rgba(0, 0, 0, 0.05);
+    /* Subtle background color */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .project-info h4,
+body.light-mode .project-info p {
+    color: #333333;
+    /* Ensure visibility against the light background */
+}
+
+body.light-mode .project-link {
+    background-color: #42A5F5;
+    /* Blue button color */
+    color: #FFFFFF;
+}
+
+body.light-mode .project-link:hover {
+    background-color: #1E88E5;
+    /* Slightly darker on hover */
+}
+
+body.light-mode .carousel-button {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333333;
+}
+
+body.light-mode .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Darken on hover */
+}
+
+/* Navbar Styles: Define styles for the navigation bar */
+.navbar {
+    position: sticky;
+    /* Make navbar stick at top */
+    top: 0;
+    padding: 15px 0;
+    z-index: 1000;
+    /* Ensure it's above other content */
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    /* Space out items evenly */
+    align-items: center;
+    width: 90%;
+    /* Maintain internal margin */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    /* Space between list items */
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* Remove underline from links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.nav-links a:hover {
+    color: #FF7043;
+    /* Change color on hover for attention */
+}
+
+.dark-mode-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Gently animate enlarging */
+}
+
+.dark-mode-btn:hover {
+    transform: scale(1.1);
+    /* Enlarge slightly on hover for feedback */
+}
+
+/* Section Styles: Style the main section areas */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-divider {
+    height: 2px;
+    width: 80%;
+    margin: 40px auto;
+    opacity: 0.7;
+    /* Semi-transparent for subtlety */
+}
+
+/* Home Section: Styles specific to the home section */
+#home {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically and horizontally */
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* Space between content elements */
+    padding: 20px;
+}
+
+.text-content {
+    flex: 1;
+    /* Allow text to take up remaining space */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Make image circular */
+    object-fit: cover;
+    border: 3px solid;
+    /* Add border */
+}
+
+/* About Section: Specific styles for about and other sections */
+#about-me,
+#work-experience,
+#blogs,
+#contact {
+    text-align: left;
+    /* Align text to the left by default */
+}
+
+.skills-container,
+.skill-category,
+.experience,
+.date {
+    margin-top: 30px;
+    /* Space out sections */
+}
+
+.skill-category ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+/* Work Experience Section: Styling for career-related sections */
+.experience h3 {
+    color: #FF7043;
+    /* Highlight for emphasis */
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #888;
+    /* Use subdued color */
+    font-style: italic;
+    /* Differentiate date from other text */
+    margin-bottom: 15px;
+}
+
+/* Carousel Styles: Define the appearance of carousel elements */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Hide overflowing items */
+}
+
+.projects-carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transitions */
+}
+
+.project-card {
+    flex: 0 0 400px;
+    /* Fixed size for each card */
+    margin-right: 20px;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+    background: #FFFFFF;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    /* Enlarge card on hover */
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.project-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+.carousel-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    * {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .project-card {
+        flex: 0 0 300px;
+        /* Adjust card size */
+        margin-right: 15px;
+    }
+
+    .project-image {
+        width: 100%;
+        /* Match the smaller screen size */
+        height: 50%;
+    }
+
+    .profile-pic {
+        height: 150px;
+        width: 120px;
+        /* Match the smaller screen size */
+        height: 120px;
+    }
+
+    .home-content {
+        flex-direction: column-reverse;
+        /* Stack elements vertically */
+        text-align: center;
+        /* Center-align text */
+        gap: 20px;
+    }
+
+    section {
+        padding: 40px 20px;
+        /* Adjust padding */
+    }
+
+    .section-divider {
+        margin: 30px auto;
+        width: 90%;
+        /* Adjust to maintain layout */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        /* Smaller font size */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .project-card {
+        flex: 0 0 90%;
+        /* Larger card width for narrow screens */
+        margin-right: 10px;
+    }
+
+    .project-info h4 {
+        font-size: 1.2rem;
+        /* Adjust text size */
+    }
+
+    .project-info p {
+        font-size: 0.9rem;
+        /* Smaller text for readability */
+    }
+
+    .project-image {
+        width: 100%;
+        /* Match the smaller screen size */
+        height: 60%;
+    }
+
+    .nav-links {
+        gap: 15px;
+        /* Reduce spacing between links */
+    }
+
+    .profile-pic {
+        width: 30%;
+        /* Smaller profile pic */
+        height: 30%;
+    }
+
+    .section-divider {
+        margin: 20px auto;
+        width: 95%;
+        /* Adjust width */
+    }
+
+    section {
+        padding: 30px 15px;
+        /* Narrower padding */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
