@@ -524,3 +524,51 @@ section {
         /* Further reduce button size */
     }
 }
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-content {
+    flex: 0 0 40%;
+    position: sticky;
+    top: 20px;
+}
+
+.adventure-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.date {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .image-content {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+}
