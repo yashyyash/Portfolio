@@ -1,208 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="./visuals/pagalbilla.png"> 
+    <title>Yash Mutatkar | Portfolio</title>
+
+    <!-- Bootswatch Sketchy Theme -->
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./visuals/pagalbilla.png">
 </head>
+
 <body>
+
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-warning" href="#">Yash Mutatkar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work-experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <!-- Home Section -->
-    <section id="home">
-        <div class="home-content">
-            <div class="text-content">
-                <h1>Hello, This is Yash Mutatkar</h1>
-                <p>Frontend | Backend | Devops</p>
+    <section id="home" class="py-5 bg-body-secondary">
+        <div class="container">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <!-- Text content -->
+                        <div class="col-md-8 text-center text-md-start">
+                            <h1 class="display-5 fw-bold text-primary">Hello, I’m <strong>Yash Mutatkar</strong></h1>
+                            <p class="lead mb-4">Software Developer | DevOps | Full Stack Developer</p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#aboutModal">
+                                Know More
+                            </button>
+                        </div>
+
+                        <!-- Profile image -->
+                        <div class="col-md-4 text-center mt-4 mt-md-0">
+                            <img src="./visuals/profile-pic.png" alt="Yash Mutatkar"
+                                class="img-fluid rounded-circle border border-3 border-primary shadow-sm"
+                                style="max-width: 200px;">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img src="./visuals/profile-pic.png" alt="Yash Mutatkar" class="profile-pic">
         </div>
+        <hr class="my-5">
     </section>
-    <hr class="section-divider">
-    
-    <!-- About Me Section -->
-    <section id="about-me">
-        <h2>About Me</h2>
-        <p>
-            I am a DevOps Engineer at Pearlthoughts (currently an intern). With a degree in Computer Engineering, I aim to make a significant impact in the IT field. I have a strong foundation in software development and am passionate about technology. I'm seeking opportunities in software development and product management to continue learning and growing. I'm eager to contribute to impactful projects and further my career in IT.
-        </p>
-    </section>
-    <hr class="section-divider">
 
-    <!-- Skills Section -->
-    <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-        <div class="skill-category">
-            
-            <strong>Languages:</strong>
-            <ul>
-                <li>Java, C++, Python, C#</li>
-            </ul>
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-primary text-white border-2 border-dark shadow">
+                <div class="modal-header border-bottom border-dark">
+                    <h5 class="modal-title text-warning fw-bold" id="aboutModalLabel">About Me</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
 
-            <strong>Web Technologies:</strong>
-            <ul>
-                <li>Jakarta EE, React JS, HTML, CSS, JavaScript</li>
-            </ul>
+                <div class="modal-body">
+                    <div class="card bg-light text-dark mb-3 border-dark">
+                        <div class="card-header text-center fw-bold border-bottom border-dark">Yash Mutatkar</div>
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">Software Developer at Bajaj Finserv</h4>
+                            <p class="card-text">
+                                I’m a passionate software developer currently working at <strong>Bajaj Finserv</strong>
+                                (since October
+                                2025), where I contribute to developing scalable, high-performance web applications and
+                                automation
+                                workflows using modern DevOps tools.
+                            </p>
+                            <p class="card-text">
+                                Before joining Bajaj Finserv, I completed my internship at
+                                <strong>PearlThoughts</strong> as a DevOps
+                                Engineer, where I worked on CI/CD, cloud integration, and containerization.
+                            </p>
+                            <p class="card-text">
+                                I’ve also completed the <strong>PG-DAC (Post Graduate Diploma in Advanced
+                                    Computing)</strong> from
+                                CDAC in 2025, which strengthened my expertise in full-stack development, microservices,
+                                and software
+                                design.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <strong>Frameworks & Libraries:</strong>
-            <ul>
-                <li>Spring Boot 3, Spring 6, .NET Core 8.0, Entity Framework Core 8.0, TensorFlow</li>
-            </ul>
-
-            <strong>Databases:</strong>
-            <ul>
-                <li>MySQL 8, SQL Server</li>
-            </ul>
-
-            <strong>DevOps & Tools:</strong>
-            <ul>
-                <li>Docker, AWS, CI/CD, Git, Maven 3</li>
-            </ul>
-
-            <strong>Concepts:</strong>
-            <ul>
-                <li>Object-Oriented Programming, Data Structures & Algorithms, Microservices, REST APIs, JWT, JPA</li>
-            </ul>
-
+                <div class="modal-footer border-top border-dark">
+                    <button type="button" class="btn btn-warning text-dark fw-bold"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-    </section>
-    <hr class="section-divider">
 
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-primary text-center">Technical Skills</h2>
+
+            <div class="accordion" id="skillsAccordion">
+
+                <!-- Languages -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingLang">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLang" aria-expanded="true" aria-controls="collapseLang">
+                            💻 Languages
+                        </button>
+                    </h2>
+                    <div id="collapseLang" class="accordion-collapse collapse show" aria-labelledby="headingLang"
+                        data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Java</strong> – Backend & enterprise applications</li>
+                                <li><strong>C++</strong> – Problem solving, DSA, performance-critical code</li>
+                                <li><strong>Python</strong> – Scripting, automation, ML</li>
+                                <li><strong>C#</strong> – .NET Core backend development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Technologies -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingWeb">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb" aria-expanded="false" aria-controls="collapseWeb">
+                            🌐 Web Technologies
+                        </button>
+                    </h2>
+                    <div id="collapseWeb" class="accordion-collapse collapse" aria-labelledby="headingWeb"
+                        data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>React.js, HTML5, CSS3, JavaScript (ES6+)</li>
+                                <li>Jakarta EE, RESTful APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFrameworks">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFrameworks" aria-expanded="false"
+                            aria-controls="collapseFrameworks">
+                            ⚙️ Frameworks & Libraries
+                        </button>
+                    </h2>
+                    <div id="collapseFrameworks" class="accordion-collapse collapse" aria-labelledby="headingFrameworks"
+                        data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Spring Boot 3, Spring 6</li>
+                                <li>.NET Core 8.0, Entity Framework Core 8.0</li>
+                                <li>TensorFlow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingDB">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDB" aria-expanded="false" aria-controls="collapseDB">
+                            🗄️ Databases
+                        </button>
+                    </h2>
+                    <div id="collapseDB" class="accordion-collapse collapse" aria-labelledby="headingDB"
+                        data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>MySQL 8</li>
+                                <li>SQL Server</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingDevOps">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDevOps" aria-expanded="false" aria-controls="collapseDevOps">
+                            🧰 DevOps & Tools
+                        </button>
+                    </h2>
+                    <div id="collapseDevOps" class="accordion-collapse collapse" aria-labelledby="headingDevOps"
+                        data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Docker, AWS, Git, Maven 3</li>
+                                <li>CI/CD pipelines, Jenkins, GitHub Actions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concepts -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingConcepts">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseConcepts" aria-expanded="false" aria-controls="collapseConcepts">
+                            🧠 Core Concepts
+                        </button>
+                    </h2>
+                    <div id="collapseConcepts" class="accordion-collapse collapse" aria-labelledby="headingConcepts"
+                        data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Object-Oriented Programming (OOP)</li>
+                                <li>Data Structures & Algorithms (DSA)</li>
+                                <li>Microservices Architecture</li>
+                                <li>JWT Authentication, JPA, REST APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <hr class="section-divider">
     <!-- Work Experience Section -->
-    <section id="work-experience">
-        <h2>Work Experience</h2>
-        <div class="experience">
-            <h3>PearlThoughts – DevOps Engineer</h3>
-            <p class="date">(September 2024 – January 2025)</p>
-            <ul>
-                <li>
-                    Led the integration and deployment of key systems on the production server,
-                    leveraging cloud infrastructure tools (EC2, ECS, and ECR) to improve infrastructure
-                    performance.
+    <section id="work-experience" class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-warning fw-bold">Work Experience</h2>
+
+            <!-- Bajaj Finserv -->
+            <div class="alert alert-dismissible alert-success border-2 border-dark shadow-sm">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <h4 class="alert-heading text-dark">Bajaj Finserv – Software Developer</h4>
+                <p class="mb-1"><em>(October 2025 – Present)</em></p>
+                <hr>
+                <ul class="mb-0">
+                    <li>Building scalable enterprise web solutions and automating development workflows.</li>
+                    <li>Collaborating with cross-functional teams to deliver high-quality, maintainable software.</li>
+                </ul>
+            </div>
+
+            <!-- PearlThoughts -->
+            <div class="alert alert-dismissible alert-warning border-2 border-dark shadow-sm">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <h4 class="alert-heading text-dark">PearlThoughts – DevOps Engineer Intern</h4>
+                <p class="mb-1"><em>(September 2024 – January 2025)</em></p>
+                <hr>
+                <ul class="mb-0">
+                    <li>Deployed production systems on AWS EC2/ECS/ECR, improving infrastructure efficiency.</li>
+                    <li>Optimized CI/CD pipelines, minimizing downtime and enhancing system reliability.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-warning fw-bold">Projects</h2>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Project 1 -->
+                <div class="col-md-4">
+                    <div class="card border-primary mb-3 shadow-sm h-100">
+                        <div class="card-header bg-primary text-white fw-bold">COMPUTER SEEKHO</div>
+                        <div class="card-body">
+                            <img src="./visuals/cdacinfo.png" alt="Computer Seekho Project"
+                                class="img-fluid rounded mb-3">
+                            <p class="card-text">
+                                Full-stack institute platform built with React, Spring Boot, and .NET microservices.
+                            </p>
+                            <a href="https://github.com/yashyyash/ComputerSeekhoDotCom" target="_blank"
+                                class="btn btn-outline-dark btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-4">
+                    <div class="card border-success mb-3 shadow-sm h-100">
+                        <div class="card-header bg-success text-white fw-bold">Efficient Car Parking System</div>
+                        <div class="card-body">
+                            <img src="./visuals/Carpark.gif" alt="Car Park Project" class="img-fluid rounded mb-3">
+                            <p class="card-text">Developed using SSD320 and IoT integration.</p>
+                            <a href="https://github.com/yashyyash/Car-Park-Project" target="_blank"
+                                class="btn btn-outline-dark btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-4">
+                    <div class="card border-warning mb-3 shadow-sm h-100">
+                        <div class="card-header bg-warning text-dark fw-bold">Online Notes Sharing System</div>
+                        <div class="card-body">
+                            <img src="./visuals/onssop.gif" alt="ONSS Project" class="img-fluid rounded mb-3">
+                            <p class="card-text">A PHP & MySQL-based online note-sharing platform.</p>
+                            <a href="https://github.com/yashyyash/ONSS" target="_blank"
+                                class="btn btn-outline-dark btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-4">
+                    <div class="card border-info mb-3 shadow-sm h-100">
+                        <div class="card-header bg-info text-dark fw-bold">Railway Management System</div>
+                        <div class="card-body">
+                            <img src="./visuals/railwayop.gif" alt="Railway System" class="img-fluid rounded mb-3">
+                            <p class="card-text">Developed in C for efficient ticket and schedule management.</p>
+                            <a href="https://github.com/yashyyash/Railway_Management_System_in_C" target="_blank"
+                                class="btn btn-outline-dark btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-4">
+                    <div class="card border-danger mb-3 shadow-sm h-100">
+                        <div class="card-header bg-danger text-white fw-bold">Snake Game</div>
+                        <div class="card-body">
+                            <img src="./visuals/snake.gif" alt="Snake Game" class="img-fluid rounded mb-3">
+                            <p class="card-text">A fun Python game built using Pygame.</p>
+                            <a href="https://github.com/yashyyash/SnakeGame" target="_blank"
+                                class="btn btn-outline-dark btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-md-4">
+                    <div class="card border-dark mb-3 shadow-sm h-100">
+                        <div class="card-header bg-dark text-white fw-bold">Portfolio Website</div>
+                        <div class="card-body">
+                            <img src="./visuals/Portfolio - Made with Clipchamp.gif" alt="Portfolio Website"
+                                class="img-fluid rounded mb-3">
+                            <p class="card-text">A personal portfolio built using HTML, CSS, and JavaScript.</p>
+                            <a href="https://github.com/yashyyash/Portfolio" target="_blank"
+                                class="btn btn-outline-warning btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-warning mb-4 fw-bold">Contact Me</h2>
+            <p class="lead">Feel free to reach out through any of the following:</p>
+
+            <ul class="list-group shadow border-2 border-dark">
+                <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                    Call
+                    <span class="badge bg-dark rounded-pill">
+                        <a href="tel:8828255800" class="text-white text-decoration-none">8828255800</a>
+                    </span>
                 </li>
-                <li>
-                    Streamlined deployment pipelines and enhanced CI/CD processes, minimizing
-                    downtime during production rollouts and optimizing system efficiency.
+
+                <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+                    Email
+                    <span class="badge bg-dark rounded-pill">
+                        <a href="mailto:yashnil532@gmail.com"
+                            class="text-white text-decoration-none">yashnil532@gmail.com</a>
+                    </span>
                 </li>
-                <li>
-                    Currently working on application integration with a cloud-based observability platform,
-                    focusing on implementing distributed tracing, logging, and metrics for improved system
-                    monitoring and performance analysis.
+
+                <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+                    LinkedIn
+                    <span class="badge bg-dark rounded-pill">
+                        <a href="https://www.linkedin.com/in/yash-mutatkar" target="_blank"
+                            class="text-white text-decoration-none">
+                            linkedin.com/in/yash-mutatkar
+                        </a>
+                    </span>
+                </li>
+
+                <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
+                    GitHub
+                    <span class="badge bg-dark rounded-pill">
+                        <a href="https://github.com/yashyyash" target="_blank" class="text-white text-decoration-none">
+                            github.com/yashyyash
+                        </a>
+                    </span>
                 </li>
             </ul>
         </div>
     </section>
-    <hr class="section-divider">
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="carousel-container">
-            <button class="carousel-button prev">❮</button>
-            <div class="projects-carousel">
-                <div class="project-card">
-                    <img src="./visuals/cdacinfo.png" alt="Computer Seekho Project" class="project-image">
-                    <div class="project-info">
-                        <h4>COMPUTER SEEKHO</h4>
-                        <p>A full-stack platform for an institute, built with React, Spring Boot, and .NET microservices. Containerized using Docker.</p>
-                        <a href="https://github.com/yashyyash/ComputerSeekhoDotCom" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <img src="./visuals/Carpark.gif" alt="Project Image" class="project-image">
-                    <div class="project-info">
-                        <h4>Efficient Car Parking System</h4>
-                        <p>Developed using SSD320.</p>
-                        <a href="https://github.com/yashyyash/Car-Park-Project" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <img src="./visuals/onssop.gif" alt="Project Image" class="project-image">
-                    <div class="project-info">
-                        <h4>Online Notes Sharing System</h4>
-                        <p>Built with PHP and MySQL.</p>
-                        <a href="https://github.com/yashyyash/ONSS" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <!-- Add more projects as necessary -->
-                <div class="project-card">
-                    <img src="./visuals/railwayop.gif" alt="Project Image" class="project-image">
-                    <div class="project-info">
-                        <h4>Railway Management System</h4>
-                        <p>Built with C.</p>
-                        <a href="https://github.com/yashyyash/Railway_Management_System_in_C" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                 <!-- Add more projects as necessary -->
-                 <div class="project-card">
-                    <img src="./visuals/snake.gif" alt="Project Image" class="project-image">
-                    <div class="project-info">
-                        <h4>Snake Game</h4>
-                        <p>Built with Python.</p>
-                        <a href="https://github.com/yashyyash/SnakeGame" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <!-- Add more projects as necessary -->
-                <div class="project-card">
-                    <img src="./visuals/Portfolio - Made with Clipchamp.gif" alt="Project Image" class="project-image">
-                    <div class="project-info">
-                        <h4>Portfolio Website</h4>
-                        <p>Built with HTML ,CSS & JS</p>
-                        <a href="https://github.com/yashyyash/Portfolio" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-button next">❯</button>
-        </div>
-    </section>
-    
-    <hr class="section-divider">
-            
-    <!-- Blogs Section -->
-    <section id="blogs">
-        <h2>Blogs</h2>
-        <p>Check out my latest blog posts. Stay tuned for more!</p>
-        <a href="blogs.html" target="_blank">Visit My Blog</a>
-    </section>
-    <hr class="section-divider">
-    
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out!</p>
-        <p>Call: 8828255800</p>
-        <p>Email: <a href="mailto:yashnil532@gmail.com">yashnil532@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/yash-mutatkar" target="_blank">www.linkedin.com/in/yash-mutatkar</a></p>
-        <p>GitHub: <a href="https://github.com/yashyyash" target="_blank">https://github.com/yashyyash</a></p>
-    </section>
-    <hr class="section-divider">
- 
+
+    <hr class="my-5">
+
     <!-- CV Download Section -->
-    <section id="download-cv">
-        <div class="cv-content">
-        <h2>Download My CV</h2>
-        <p>Click the link below to download my CV:</p>
-        <a href="./visuals/YashMutatkar-Resume.pdf" class="download-btn" download>Download CV</a>
-        </div>
+    <section id="download-cv" class="py-5 text-center bg-body-tertiary">
+        <h2 class="text-warning fw-bold mb-3">Download My CV</h2>
+        <p class="mb-4">Click below to download my latest resume:</p>
+        <a href="./visuals/YashMutatkar-Resume.pdf" class="btn btn-warning text-dark fw-bold border-2 border-dark"
+            download>
+            📄 Download CV
+        </a>
     </section>
-    
+
+    <!-- Bootstrap JS (for modal, navbar, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
