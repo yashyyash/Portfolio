@@ -1,0 +1,57 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: 
+
+jobs:
+  build:
+    name: Build Stage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Script
+        run: |
+          echo "Building..."
+          mkdir -p build
+          touch build/somefile.txt
+          echo "Build complete!"
+          ls -la build
+
+      - name: Publish Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: build
+
+  test:
+    name: Test Stage
+    runs-on: self-hosted
+    needs: build
+    if: success()
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: build-artifacts
+
+      - name: Test File Exists
+        run: |
+          echo "Testing..."
+          if [ -f "build-artifacts/somefile.txt" ]; then
+            echo "✅ Test PASSED: File exists!"
+            exit 0
+          else
+            echo "❌ Test FAILED: File not found!"
+            exit 1
+          fi
