@@ -31,7 +31,7 @@ jobs:
 
   test:
     name: Test Stage
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: build
     if: success()
 
